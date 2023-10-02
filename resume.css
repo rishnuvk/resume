@@ -10,9 +10,13 @@
 .container {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 750px;
+    
     /* 1 vh=1% */
-    background-color: white;
+    /* background-color: rgb(99, 171, 199); */
+    background-image: url(./images/backgro.webp);
+    background-size: cover;
+    
 
 }
 
@@ -20,13 +24,17 @@ nav {
     display: flex;
     width: 90%;
     margin-left: 100px;
+    margin-top: 5px;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(239, 168, 240);
+    background-color: transparent;
 }
 
 nav .logo {
-    width: 150px;
+    width: 70px;
+    height: 70px;
+    margin-top: 10px;
+    border-radius: 50%;
 }
 
 nav ul li {
@@ -38,14 +46,14 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: black;
+    color: rgb(15, 145, 232);
     font-weight: bold;
 }
 
 /* psudo class -to get specialm effect on mouse hover
 selector:pseudo-class-name{property:value} */
 nav ul li a:hover{
-    color: red;
+    color: rgb(163, 211, 237);
 }
 
 .title {
@@ -59,6 +67,9 @@ nav ul li a:hover{
     margin-bottom: 20px;
 
 
+}
+.title p{
+    color: #b7f8e5;
 }
 
 .title span {
@@ -76,6 +87,10 @@ nav ul li a:hover{
     margin: 30px 0;
     border-radius: 5px;
 }
+.title  :hover{
+    box-shadow: #e9fcf4;
+    color: #b7f8e5;
+}
 
 .images {
     width: 45%;
@@ -90,6 +105,7 @@ nav ul li a:hover{
     margin-right: 8%;
     margin-top: 13%;
     margin-left: 8%;
+    
 }
 
 .heading {
@@ -103,17 +119,23 @@ nav ul li a:hover{
 
 .heading span {
     font-size: 25px;
-    color: red;
+    color: rgb(7, 1, 190);
 }
 
 .about-content {
     display: grid;
+    padding-top: 50px;
     grid-template-columns: repeat(2, 1fr);
+}
+.images{
+    width: 70;
+    height: 70;
+    border-radius: 10px;
 }
 
 .about-img img {
-    width: 40%;
-    height: 70%;
+    width: 50%;
+
     border-radius: 10px;
 }
 
@@ -121,6 +143,7 @@ nav ul li a:hover{
     font-size: 18px;
     font-weight: 500;
     text-align: justify;
+    
 }
 
 .informatin {
@@ -141,64 +164,136 @@ nav ul li a:hover{
 #skills{
     margin-left: 8%;
     margin-top: 13%;
-    margin-right: 8%;    
+    margin-right: 8%;
 }
-
-.slill-container {
+.skill-container{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
+    padding-top: 50px;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center ;
     gap: 2rem;
 }
-
-.skill-image img {
-    width: 30%;
-    
+.skill-img img{
+    width: 70%;
+    object-position: center;
     padding-left: 4rem;
-
+    border-radius: 10%;
 }
-.bar-box{
+
+.skill-bars{
+    padding: 25px 30px;
+    width: 600px;
+    background: #475278;
+    
+    border-radius: 10px;
+    }
+    .skill-bars .bar{
+    margin: 20px 0;
+    }
+    .skill-bars .bar:first-child{
+    margin-top: 0px;
+    }
+    .skill-bars .bar .info{
+    margin-bottom: 5px;
+    }
+    .skill-bars .bar .info span{
+    font-weight: 500;
+    font-size: 17px;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+    color: aliceblue;
+    }
+    @keyframes showText {
+    100%{
+      opacity: 1;
+    }
+    }
+    .skill-bars .bar .progress-line{
+    height: 10px;
+    width: 100%;
+    background:  #f0f0f0;
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-    margin-bottom: 1rem;
-}
-.bar-box span{
-    font-size: 23%;
-    font-weight: 700;
-}
-.light-bar{
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: 10px;
+
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.05),
+                0 1px rgba(255,255,255,0.8);
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+    }
+    @keyframes animate {
+    100%{
+      transform: scaleX(1);
+    }
+    }
+    .bar .progress-line span{
+    height: 100%;
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100;
-    height: 8px;
-    background-color: rgb(222, 111, 42);
-    border-radius: 8px;
-
-}
-.percent-bar{
-
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background:  #6665ee;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+    }
+    .bar .progress-line.html span{
+    width: 90%;
+    }
+    .bar .progress-line.css span{
+    width: 88%;
+    }
+    
+    .bar .progress-line.python span{
+    width: 65%;
+    }
+    .bar .progress-line.mysql span{
+    width: 50%;
+    }
+    .progress-line span::before{
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100;
-    height: 8px;
-    background-color: rgb(4, 39, 68);
-    border-radius: 8px;
-}
-.html-bar{
-    width: 94%;
+    content: "";
+    top: -10px;
+    right: 0;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #000;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+    }
+    .progress-line span::after{
+    position: absolute;
+    top: -28px;
+    right: 0;
+    font-weight: 500;
+    background: #000;
+    color: #fff;
+    padding: 1px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+    }
+    @keyframes showText2 {
+    100%{
+      opacity: 1;
+    }
+    }
+    .progress-line.html span::after{
+    content: "90%";
+    }
+    .progress-line.css span::after{
+    content: "88%";
+    }
+    
+    .progress-line.python span::after{
+    content: "65%";
+    }
+    .progress-line.mysql span::after{
+    content: "50%";
+    }
 
-}
-.css-bar{
-    width:78% ;
-}
-.angular-bar{
-    width: 60%;
-}
 #contact{
     margin-left: 8%;
     margin-top: 13%;
@@ -210,6 +305,7 @@ nav ul li a:hover{
     justify-content: center;
     align-items: center;
     background:transparent ;
+    padding-top: 50px;
     gap: 40px;
     }
     
@@ -296,4 +392,8 @@ nav ul li a:hover{
     .wrapper .whatsapp:hover span,
     .wrapper .whatsapp:hover .tooltip{
     background: #1ec800;
+    }
+    footer{
+        margin-top: 2rem;
+        font-weight: bolder;
     }
