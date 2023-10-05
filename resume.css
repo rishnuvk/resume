@@ -6,6 +6,9 @@
     font-family: 'Oswald', sans-serif;
     font-family: 'Poppins', sans-serif;
 }
+body{
+    background-color: #b7f8e5;
+}
 
 .container {
     position: relative;
@@ -16,6 +19,7 @@
     /* background-color: rgb(99, 171, 199); */
     background-image: url(./images/backgro.webp);
     background-size: cover;
+    background-size: 100% 100%;
     
 
 }
@@ -23,7 +27,7 @@
 nav {
     display: flex;
     width: 90%;
-    margin-left: 100px;
+    
     margin-top: 5px;
     align-items: center;
     justify-content: space-between;
@@ -69,11 +73,11 @@ nav ul li a:hover{
 
 }
 .title p{
-    color: #b7f8e5;
+    color: #93e7ce;
 }
 
 .title span {
-    color: #555;
+    color: #f47272;
     line-height: 30px;
 }
 
@@ -396,4 +400,44 @@ nav ul li a:hover{
     footer{
         margin-top: 2rem;
         font-weight: bolder;
+    }
+     
+    @media(max-width: 600px){
+        #about {
+           
+            padding-top: 500px;
+            
+            
+        }
+        .skill-bars{
+            
+            width: 300px;
+        }
+        .skill-container{
+            display: block;
+        }
+        footer{
+            font-size: xx-small;
+        }
+        .about-text {
+            font-size: 10px;
+            padding-right: 80px;
+        }
+
+        .wrapper{
+            size: 100px;
+            gap: 0px;
+            }
+            #contact{
+                margin-left: 4%;
+                margin-top: 13%;
+                margin-right: 4%;
+
+            
+            }
+            
+            
+
+
+        
     }
